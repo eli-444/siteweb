@@ -1,435 +1,382 @@
 /* ==========================================================================
    Aurora Web & Sec — CSS global (awes.css)
-   Conçu pour être commun à toutes les pages
+   Refonte "Google Bug Hunters inspired" (dark, sobre, Material-ish)
    ========================================================================== */
-/* --- Aurora Web & Sec : Global font (centralized) --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
-/* Improve rendering across OS/browsers */
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* Global typography */
-:root {
-  --font-base: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-}
-
-body {
-  font-family: var(--font-base);
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-/* create spacer to espace sections */
-.spacer{
-
-  height:100px;
-
-}
-
-/* Headings for consistent weights across pages */
-h1, h2, h3 { font-weight: 800; line-height: 1.1; }
-h4, h5, h6 { font-weight: 600; line-height: 1.2; }
-
-/* Buttons/menus for consistent look */
-.btn { font-weight: 600; }
-.nav .brand { font-weight: 800; letter-spacing: .5px; }
-
-/* -------- Variables thème -------- */
 :root{
-   --bg:#0a0d14; --card:#0f1522;
-  --text:#eaf1ff; --muted:#9aa6bc;
-  --accent:#0fe3b1;           /* mint/cyan */
-  --accent2:#3ea7ff;
+  --bg:#202124;
+  --surface:#303134;
+  --surface-2:#2b2c2f;
+  --text:#e8eaed;
+  --text-soft:rgba(232,234,237,.92);
+  --muted:#9aa0a6;
+  --border:#3c4043;
 
-  --accent-rgb: 15 227 177; /* #0fe3b1 */
-  --accent2-rgb: 62 167 255;   /* #3ea7ff */
-  --radius:18px;
+  --link:#8ab4f8;
+  --primary:#1a73e8;
+  --primary-hover:#2b7de9;
+  --primary-ink:#e8f0fe;
 
-  /* Échelle typographique & spacing (inchangés) */
-  --fs-xs:.85rem; --fs-sm:.95rem; --fs-md:1rem; --fs-lg:1.125rem; --fs-xl:1.4rem; --fs-2xl:2rem; --fs-3xl:clamp(36px,6vw,72px);
-  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:20px; --space-6:24px; --space-8:32px; --space-12:48px; --space-16:64px;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(0,0,0,.25), 0 10px 30px rgba(0,0,0,.35);
+
+  --fs-xs:.85rem;
+  --fs-sm:.95rem;
+  --fs-md:1rem;
+  --fs-lg:1.125rem;
+
+  --max:1200px;
+  --pad:20px;
 }
 
-/* -------- Reset minimal -------- */
+/* --- Reset / base --- */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0; min-height:100vh; overflow-x:hidden;
   color:var(--text);
-  background:
-    radial-gradient(1200px 600px at 10% 0%, rgba(255,122,24,.12) 0, transparent 60%),  /* orange */
-    radial-gradient(900px 500px at 90% 10%, rgba(255, 0, 255, 0.12) 0, transparent 60%), /* blanc doux */
-    var(--bg);
-  font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+  font-family:Roboto, system-ui, -apple-system, "Segoe UI", Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
   line-height:1.6; font-size:var(--fs-md);
+  background-color:var(--bg);
+  /* grain + halos (inspired by Google dark surfaces) */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,.055) 1px, transparent 0),
+    radial-gradient(900px 650px at 10% 10%, rgba(138,180,248,.12), transparent 62%),
+    radial-gradient(800px 600px at 85% 15%, rgba(26,115,232,.10), transparent 60%);
+  background-size:24px 24px, auto, auto;
 }
 img{max-width:100%; height:auto; display:block}
 svg{display:block}
-button,input,select,textarea{font:inherit; color:inherit; background:none}
+button,input,select,textarea{font:inherit; color:inherit}
+a{color:var(--link); text-decoration:none}
+a:hover{text-decoration:underline}
 :focus{outline:none}
-:focus-visible{outline:2px solid var(--accent2); outline-offset:2px; border-radius:4px}
+:focus-visible{outline:2px solid var(--link); outline-offset:2px; border-radius:10px}
 
-/* -------- Typo de base -------- */
-h1,h2,h3{line-height:1.15; margin:0 0 var(--space-3)}
-h1{font-size:var(--fs-3xl)}
-h2{font-size:var(--fs-2xl)}
-h3{font-size:var(--fs-xl)}
-p{margin:0 0 var(--space-3); color:var(--muted)}
-.lead{color:var(--muted); font-size:var(--fs-lg); max-width:72ch}
-
-/* -------- Layout & helpers -------- */
-.container{max-width:1100px; margin:0 auto; padding:0 var(--space-5)}
-section{padding:var(--space-16) 0}
-.section-compact{padding:var(--space-12) 0}
-.stack > * + *{margin-top:var(--space-4)}
+/* --- Layout helpers --- */
+.container{max-width:var(--max); margin:0 auto; padding:0 var(--pad)}
+section{padding:72px 0}
+.section-compact{padding:48px 0}
 .center{text-align:center}
+.stack > * + *{margin-top:16px}
+.spacer{height:64px}
 .hide{display:none !important}
 .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.mt-8{margin-top:32px}
+.mb-8{margin-bottom:32px}
 
-/* -------- Skip link (a11y) -------- */
+/* --- Typo --- */
+h1,h2,h3{margin:0 0 12px; line-height:1.15; font-weight:500; letter-spacing:-.02em}
+h1{font-size:clamp(40px, 5vw, 64px)}
+h2{font-size:clamp(26px, 2.6vw, 36px)}
+h3{font-size:clamp(18px, 1.5vw, 22px); font-weight:600}
+p{margin:0 0 12px; color:var(--text-soft)}
+.lead{font-size:var(--fs-lg); max-width:74ch; color:var(--muted)}
+
+/* old .gradient kept for compatibility (now a subtle underline highlight) */
+.gradient{
+  color:var(--text);
+  background:none;
+  position:relative;
+  display:inline-block;
+  padding-bottom:6px;
+}
+.gradient::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  height:3px;
+  width:72px;
+  border-radius:999px;
+  background:linear-gradient(90deg, var(--primary), rgba(138,180,248,.9));
+  opacity:.95;
+}
+/* --- Skip link (a11y) --- */
 .skip-link{
   position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
 }
 .skip-link:focus{
   left:16px; top:16px; width:auto; height:auto; padding:10px 14px;
-  background:#10121a; color:#fff; border-radius:10px; outline:2px solid var(--accent2); z-index:1001;
+  background:var(--surface);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:12px;
+  z-index:1001;
 }
 
-/* -------- Barre de progression scroll -------- */
+/* --- Scroll progress --- */
 .progress{
-  position:fixed; inset:0 0 auto 0; height:3px;
-  background:linear-gradient(90deg,var(--accent),var(--accent2));
-  transform-origin:0 50%; transform:scaleX(0); z-index:999;
+  position:fixed; inset:0 0 auto 0; height:2px;
+  background:linear-gradient(90deg, rgba(138,180,248,.85), rgba(26,115,232,.95));
+  transform-origin:0 50%; transform:scaleX(0);
+  z-index:999;
 }
 
-/* -------- Header / Nav -------- */
+/* --- Remove old blobs (we keep markup but we hide it) --- */
+.shapes{display:none !important}
+
+/* --- Header / Nav (Bug Hunters inspired) --- */
 .nav{
   position:sticky; top:0; z-index:998;
-  backdrop-filter:saturate(160%) blur(8px);
-  background:rgba(10,11,16,.5);
-  border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(32,33,36,.9);
+  backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--border);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:64px}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.5px}
-.brand .dot{width:10px;height:10px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent2));box-shadow:0 0 10px rgba(255,122,24,.6)}
-.menu{display:flex;align-items:center;gap:18px}
-.menu a{color:var(--text);text-decoration:none;opacity:.85}
-.menu a:hover{opacity:1}
-
-/* Dropdown */
-.dropdown{position:relative}
-.dropdown-btn{
-  display:flex;align-items:center;gap:.45rem;background:transparent;
-  border:1px solid rgba(255,255,255,.08);padding:.5rem .75rem;border-radius:999px;
-  color:var(--text);cursor:pointer
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  min-height:64px;
+  gap:16px;
 }
-.chev{transition:transform .2s ease}
-.dropdown[aria-expanded="true"] .chev{transform:rotate(180deg)}
-.dropdown-menu{
-  position:absolute;right:0;top:calc(100% + 10px);min-width:220px;background:var(--card);
-  border:1px solid rgba(255,255,255,.08);border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.35);
-  padding:8px;display:none
+.brand{
+  display:flex; align-items:center; gap:12px;
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
 }
-.dropdown[aria-expanded="true"] .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px;border-radius:10px}
-.dropdown-menu a:hover{background:rgba(255,255,255,.06)}
+.brand-logo-circle{
+  width:40px; height:40px; border-radius:999px;
+  display:grid; place-items:center;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border:1px solid var(--border);
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+  overflow:hidden;
+}
+.brand-logo{width:26px; height:26px}
+.menu{display:flex; align-items:center; gap:18px; flex-wrap:wrap}
+.menu a{
+  color:var(--text);
+  text-decoration:none;
+  opacity:.9;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
+}
+.menu a:hover{
+  opacity:1;
+  text-decoration:none;
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.06);
+}
+.menu a[aria-current="page"]{
+  opacity:1;
+  background:rgba(138,180,248,.14);
+  border-color:rgba(138,180,248,.25);
+}
 
-/* -------- Hero -------- */
-.hero{padding:120px 0 100px}
-.gradient{background:linear-gradient(90deg,var(--accent) 0%, var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.cta{display:flex;gap:12px;margin-top:26px}
+/* --- Hero --- */
+.hero{padding:72px 0 56px}
+.cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
 
-/* ===================== BTN – Glow latéral (accent à gauche, accent2 à droite) ===================== */
+/* Search-like bar (inspired by Bug Hunters) */
+.search{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(0,0,0,.16);
+  max-width:720px;
+}
+.search-ic{color:var(--muted); display:grid; place-items:center}
+.search-input{
+  flex:1;
+  border:0;
+  outline:none;
+  background:transparent;
+  color:var(--text);
+  padding:8px 6px;
+  min-width:140px;
+}
+.search-input::placeholder{color:rgba(154,160,166,.85)}
+.search-btn{
+  border:1px solid transparent;
+  border-radius:12px;
+  padding:10px 14px;
+  font-weight:500;
+  cursor:pointer;
+  background:rgba(138,180,248,.18);
+  color:var(--text);
+}
+.search-btn:hover{background:rgba(138,180,248,.25)}
+
+/* --- Buttons --- */
 .btn{
-  appearance:none; border:0; border-radius:999px; padding:12px 18px; font-weight:600; cursor:pointer;
-  color:#0a0d14; background:linear-gradient(90deg, var(--accent), var(--accent2));
-  position:relative; z-index:0; display:inline-flex; align-items:center; justify-content:center;
-  /* ombre neutre d’élévation */
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
+  appearance:none;
+  border:1px solid transparent;
+  border-radius:12px;
+  padding:10px 14px;
+  font-weight:500;
+  cursor:pointer;
+  color:var(--primary-ink);
+  background:var(--primary);
+  box-shadow:0 1px 2px rgba(0,0,0,.25);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   text-decoration:none;
 }
-/* halos latéralisés */
-.btn::before,
-.btn::after{
-  content:"";
-  position:absolute; top:-8px; bottom:-8px; width:56%;
-  border-radius:inherit; pointer-events:none; z-index:-1;
-  filter:blur(18px); opacity:.75;
+.btn:hover{background:var(--primary-hover); text-decoration:none}
+.btn:active{transform:translateY(1px)}
+.btn.alt{
+  background:transparent;
+  color:var(--text);
+  border-color:var(--border);
+  box-shadow:none;
 }
-/* gauche = mint (#0fe3b1) */
-.btn::before{
-  left:-8px;
-  background:
-    radial-gradient(85% 120% at left center,
-      rgb(var(--accent-rgb) / .65) 0%,
-      rgb(var(--accent-rgb) / .45) 40%,
-      transparent 70%);
+.btn.alt:hover{
+  background:rgba(255,255,255,.06);
 }
-/* droite = bleu (#3ea7ff) */
-.btn::after{
-  right:-8px;
-  background:
-    radial-gradient(85% 120% at right center,
-      rgb(var(--accent2-rgb) / .60) 0%,
-      rgb(var(--accent2-rgb) / .45) 40%,
-      transparent 70%);
-}
-.btn:hover{ filter:saturate(110%); }
-.btn:hover::before, .btn:hover::after{ opacity:.9; filter:blur(20px); }
-.btn:active{ transform:translateY(1px); }
-.btn:active::before, .btn:active::after{ opacity:.7; filter:blur(16px); }
 
-
-
-/* -------- Cards & grid -------- */
-.grid{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
+/* --- Cards & grid --- */
+.grid{display:grid; grid-template-columns:1fr; gap:18px}
+@media(min-width:860px){.grid{grid-template-columns:repeat(3, 1fr)}}
 .card{
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid var(--border);
   border-radius:var(--radius);
-  padding:22px;
+  padding:20px;
+  box-shadow:0 1px 2px rgba(0,0,0,.2);
 }
-/* Carte “feature” façon modèle */
-.feature{
-  position: relative;
-  padding: 24px;
-  border-radius: 18px; /* déjà dans .card via --radius, on renforce ici si besoin */
-}
+.card:hover{box-shadow:var(--shadow); transform:translateY(-1px)}
+.card h2{font-size:1.15rem; font-weight:600; margin:0 0 10px}
+.card h3{margin-top:0}
 
-/* Pastille d’icône circulaire en dégradé (accent → accent2) */
+.feature{position:relative}
+
+/* Icon badge */
 .icon-badge{
-  width: 44px; height: 44px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  display: grid; place-items: center;
-  color: white;
-  margin-bottom: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  /* finitions proches du screenshot */
+  width:40px; height:40px;
+  border-radius:12px;
+  display:grid; place-items:center;
+  background:rgba(138,180,248,.12);
+  border:1px solid rgba(138,180,248,.22);
+  color:var(--link);
+  margin-bottom:12px;
 }
 
-/* Titre plus présent, comme sur le modèle */
-.feature h3{
-  margin: 0 0 8px;
-  font-weight: 800;
-  font-size: 20px;
-  color: var(--text);
-}
-
-/* Paragraphe d’intro plus doux */
-.feature .muted{ color: var(--muted); margin: 0 0 8px; }
-
-/* Liste à puces nettes, espacées */
+/* bullets */
 .bullets{
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin: 0;
-  color: var(--muted);
+  margin:10px 0 0;
+  padding-left:18px;
+  color:var(--muted);
 }
-.bullets li + li{ margin-top: 6px;}
+.bullets li{margin:6px 0}
 
-/* Optionnel : contour subtile comme sur la capture */
-.feature{
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.08);
-}
-.brand-logo{
-  width:28px;
-  border-radius:50%;
-  object-fit:cover;     /* au cas où l’image ne soit pas parfaitement carrée */
-  display:block;
-}
-@media (min-width:768px){ .brand-logo{ width:32px; height:32px; } }
+/* muted helper */
+.muted{color:var(--muted)}
 
-/* -------- Trust / logos -------- */
-.logo-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}
-@media(min-width:680px){.logo-row{grid-template-columns:repeat(5,1fr)}}
-.logo{
-  display:flex;align-items:center;justify-content:center;height:90px;border-radius:14px;
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  padding:10px 14px;text-decoration:none;transition:transform .18s ease, background .18s ease, border-color .18s ease
+/* --- Trust / logos --- */
+.marquee{
+  margin-top:18px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px;
+  background:rgba(255,255,255,.03);
+  overflow:hidden;
 }
-.logo:hover{transform:translateY(-2px);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
-.logo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-/* ===== Noms dynamiques (sans logos) ===== */
-.name-tile{
-  height: 90px;                /* même gabarit que les logos pour l’alignement */
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none;
-  padding: 10px 14px;
-  transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+.marquee-track{
+  display:flex;
+  gap:12px;
+  width:max-content;
+  animation:marquee 26s linear infinite;
 }
-.name-tile:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.14);
-  box-shadow: 0 8px 22px rgba(0,0,0,.25);
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
 }
-
+.logo.name-tile{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  min-width:180px;
+  border-radius:12px;
+  background:rgba(0,0,0,.18);
+  border:1px solid var(--border);
+  text-decoration:none;
+}
+.logo.name-tile:hover{background:rgba(255,255,255,.06); text-decoration:none}
 .name-anim{
-  font-weight: 800;
-  letter-spacing: .6px;
-  font-size: clamp(14px, 2.6vw, 20px);
-  line-height: 1;
-  /* texte en dégradé animé */
-  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: nameShift 6s linear infinite;
-  text-transform: uppercase;   /* optionnel, pour un rendu “badge” */
+  font-family:"Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:.95rem;
+  letter-spacing:.02em;
+  color:var(--text);
 }
 
-@keyframes nameShift {
-  0%   { background-position:   0% 50%; }
-  100% { background-position: 200% 50%; }
+/* --- Forms --- */
+.form{
+  margin-top:16px;
+  display:grid;
+  gap:10px;
+  max-width:560px;
+}
+.label{font-size:var(--fs-sm); color:var(--muted)}
+.input, .textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(0,0,0,.18);
+  color:var(--text);
+}
+.input::placeholder, .textarea::placeholder{color:rgba(154,160,166,.8)}
+.textarea{min-height:140px; resize:vertical}
+.input:focus, .textarea:focus{
+  border-color:rgba(138,180,248,.7);
+  box-shadow:0 0 0 3px rgba(138,180,248,.18);
 }
 
-/* -------- Formulaires -------- */
-.form{display:grid;gap:14px;max-width:760px}
-.input,.textarea,select{
-  width:100%; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1);
-  color:var(--text); border-radius:12px; padding:12px 14px; outline:none;
-}
-.input::placeholder,.textarea::placeholder{color:#9aa3b5}
-.textarea{min-height:150px;resize:vertical}
-.label{font-size:.9rem;color:var(--muted)}
-.help{font-size:var(--fs-sm); color:var(--muted)}
-.form .row{display:grid; gap:12px}
-@media(min-width:680px){.form .row{grid-template-columns:1fr 1fr}}
 
-/* États d’erreur/succès (utiliser .is-error / .is-valid sur .input/.textarea) */
-.is-error{border-color:#ff6b6b !important; box-shadow:0 0 0 3px rgba(255,107,107,.15)}
-.is-valid{border-color:#2ecc71 !important; box-shadow:0 0 0 3px rgba(46,204,113,.15)}
-
-/* -------- Liens modernes (global) -------- */
-a{color:var(--text);text-decoration:none;transition:color .2s ease, opacity .2s ease}
-a:visited{color:var(--text)}
-a:not(.btn):not(.brand):not(.logo):not(.dropdown-btn):not(.menu a){
-  position:relative; padding-bottom:2px;
-  background-image:linear-gradient(90deg,var(--accent),var(--accent2));
-  background-size:0 2px; background-position:0 100%; background-repeat:no-repeat;
-}
-a:hover:not(.btn):not(.brand):not(.logo):not(.dropdown-btn):not(.menu a){
-  background-size:100% 2px; color:#fff;
-}
-footer nav a{color:var(--muted); opacity:.9; margin:0 .25rem}
-footer nav a:hover{color:var(--text); opacity:1}
-
-/* -------- Footer -------- */
-footer{padding:40px 0; color:var(--muted);margin-top: 130px; border-top:1px solid rgba(255,255,255,.08)}
-
-/* -------- Fond animé global -------- */
-.shapes{position:fixed; inset:0; pointer-events:none; z-index:-1; overflow:hidden}
-.blob{position:absolute; filter:blur(40px); opacity:.45; mix-blend:screen}
-.b1{
-  width:340px; height:340px;
-  background: radial-gradient(circle at 30% 30%, rgb(var(--accent-rgb) / .70), transparent 60%);
-  left:-80px; top:-60px;
-  animation: float1 10s ease-in-out infinite;
-}
-
-.b2{
-  width:420px; height:420px;
-  background: radial-gradient(circle at 70% 40%, rgb(var(--accent2-rgb) / .70), transparent 60%);
-  right:-120px; top:120px;
-  animation: float2 12s ease-in-out infinite;
-}
-
-/* b3 : léger halo neutre pour profondeur (reste subtil) */
-.b3{
-  width:300px; height:300px;
-  background: radial-gradient(circle at 50% 60%, rgba(255,255,255,.10), transparent 60%);
-  left:40%; bottom:-120px;
-  animation: float3 14s ease-in-out infinite;
-}
-@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(25px)}}
-@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
-@keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(35px)}}
-
-/* -------- Reveal on scroll -------- */
-.reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease}
+/* --- Reveal on scroll --- */
+.reveal{opacity:0; transform:translateY(12px); transition:opacity .55s ease, transform .55s ease}
 .reveal.visible{opacity:1; transform:none}
 
-/* -------- Cookie banner -------- */
+/* --- Footer --- */
+footer{
+  border-top:1px solid var(--border);
+  background:rgba(0,0,0,.12);
+  padding:22px 0;
+}
+footer a{color:var(--text); opacity:.9}
+footer a:hover{opacity:1}
+
+/* --- Cookie banner --- */
 #cookie-banner{
-  position:fixed; left:16px; right:16px; bottom:16px; z-index:1000; background:var(--card);
-  border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:14px; display:none
+  position:fixed;
+  left:16px;
+  right:16px;
+  bottom:16px;
+  max-width:980px;
+  margin:0 auto;
+  display:none;
+  background:rgba(48,49,52,.92);
+  backdrop-filter:saturate(160%) blur(10px);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:14px 14px;
+  box-shadow:var(--shadow);
+  z-index:1000;
 }
-#cookie-banner p{margin:0 0 10px; color:#ccd2e0}
-#cookie-banner .actions{display:flex; gap:8px; flex-wrap:wrap}
-#cookie-banner button{border:0; border-radius:999px; padding:10px 14px; font-weight:600; cursor:pointer}
-#btn-accept{background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#0a0b10}
-#btn-decline{background:transparent; color:#e9ecf5; border:1px solid rgba(255,255,255,.2)}
-
-/* -------- Utilitaires espacement -------- */
-.mt-0{margin-top:0!important} .mt-2{margin-top:var(--space-2)!important} .mt-4{margin-top:var(--space-4)!important} .mt-8{margin-top:var(--space-8)!important}
-.mb-0{margin-bottom:0!important} .mb-2{margin-bottom:var(--space-2)!important} .mb-4{margin-bottom:var(--space-4)!important} .mb-8{margin-bottom:var(--space-8)!important}
-.pt-0{padding-top:0!important} .pt-8{padding-top:var(--space-8)!important}
-.pb-0{padding-bottom:0!important} .pb-8{padding-bottom:var(--space-8)!important}
-
-/* -------- Réduction des animations -------- */
-@media (prefers-reduced-motion: reduce){
-  .blob,.reveal{animation:none !important; transition:none !important}
+#cookie-banner p{margin:0 0 10px; color:var(--text)}
+#cookie-banner .actions{display:flex; gap:10px; flex-wrap:wrap}
+#cookie-banner button{
+  border-radius:12px;
+  padding:10px 14px;
+  border:1px solid var(--border);
+  background:rgba(0,0,0,.18);
+  color:var(--text);
+  cursor:pointer;
 }
-
-/* -------- Imprimable -------- */
-@media print{
-  .nav, .progress, #cookie-banner, .shapes{display:none !important}
-  body{background:#fff; color:#000}
-  a{color:#000; background-image:none}
+#cookie-banner #btn-accept{
+  background:var(--primary);
+  border-color:transparent;
+  color:var(--primary-ink);
 }
-/* ===== Marquee (défilement horizontal infini) ===== */
-.marquee{
-  position: relative;
-  overflow: hidden;
-  /* léger fondu aux bords pour un rendu + propre */
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
-  margin-top: var(--space-4);
-}
-
-.marquee-track{
-  display: inline-flex;
-  align-items: stretch;
-  gap: 16px;
-  /* On met 2 bandes à la suite (dupliquées dans le HTML) et on les translate en boucle */
-  animation: marquee-slide 28s linear infinite;
-  will-change: transform;
-  padding: 6px 0; /* un peu d’air vertical */
-}
-
-/* vitesse au survol/focus : pause pour accessibilité et confort */
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track{
-  animation-play-state: paused;
-}
-
-/* Les tuiles (réutilise ton style .logo + .name-tile existant) */
-.marquee .name-tile{
-  min-width: clamp(220px, 30vw, 360px); /* largeur mini de chaque “carte” */
-  height: 90px;
-}
-
-/* Animation : translateX sur 50% (puisqu’on duplique la liste) */
-@keyframes marquee-slide{
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Réduction des animations : on laisse le scroll manuel */
-@media (prefers-reduced-motion: reduce){
-  .marquee-track{ animation: none; }
-}
-
-/* Titre centré : tu as déjà .center dans awes.css, mais on uniformise */
-#trust > h2.center{ text-align: center; }
+#cookie-banner button:hover{background:rgba(255,255,255,.06)}
+#cookie-banner #btn-accept:hover{background:var(--primary-hover)}

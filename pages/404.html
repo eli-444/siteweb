@@ -1,11 +1,58 @@
-<!DOCTYPE html><html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page introuvable — 404</title>
-<meta name="robots" content="noindex">
-</head><body>
-<main class="container">
-<h1>404</h1>
-<p>Oups, cette page n’existe pas (ou plus).</p>
-<p><a href="/">Revenir à l’accueil</a></p>
-</main>
-</body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Page introuvable — 404 | Aurora Web & Sec</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/css/awes.css">
+  <link rel="manifest" href="/manifest/manifest.webmanifest">
+  <meta name="theme-color" content="#202124">
+  <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="32x32">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="https://aurorawebandsecurity.fr" class="brand" aria-label="Aurora Web & Sec – Accueil">
+        <span class="brand-logo-circle">
+          <img class="brand-logo" src="/assets/favicon/awsiconblue.png" alt="" width="26" height="26" decoding="async">
+        </span>
+        <span>Aurora Web &amp; Sec</span>
+      </a>
+
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="../pages/services.html">Services</a>
+        <a href="../pages/a-propos.html">À propos</a>
+        <a href="../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container hero">
+      <h1>404</h1>
+      <p class="lead">Oups, cette page n’existe pas (ou plus).</p>
+      <div class="cta">
+        <a class="btn" href="/">Revenir à l’accueil</a>
+        <a class="btn alt" href="/pages/services.html">Voir les services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="year"></span> Aurora Web &amp; Sec</span>
+      <nav aria-label="Liens de bas de page">
+        <a href="../pages/mentions-legales.html">Mentions légales</a> •
+        <a href="../pages/confidentialite.html">Confidentialité</a> •
+        <a href="../pages/cgv.html">CGV</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/awes.js" defer></script>
+</body>
+</html>
