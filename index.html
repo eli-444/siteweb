@@ -201,30 +201,39 @@
 
 
 <div class="spacer"></div>
-    <section id="contact" class="container">
-      <h2 class="reveal">Vous avez un projet ? Contactez-nous !</h2>
-      <p class="lead reveal">Expliquez-nous votre besoin et nous tacherons de vous répondre dans les prochaines 24h</p>
-      <p class="lead reveal">Ou contactez-nous au  <a href="tel:+33612345678" aria-label="Appeler le 06 45 22 74 70">06&nbsp;45&nbsp;22&nbsp;74&nbsp;70</a>.</p>
-     <form class="form reveal" id="contactForm" method="post" action="mailto:aurorawebsec@gmail.com" enctype="text/plain" novalidate>
-  <label class="label" for="name">Nom</label>
-  <input class="input" id="name" name="name" type="text" placeholder="Votre nom" autocomplete="name" required />
+   <section id="contact" class="container">
+  <h2 class="reveal">Vous avez un projet ? Contactez-nous !</h2>
+  <p class="lead reveal">Expliquez-nous votre besoin et nous tacherons de vous répondre dans les prochaines 24h</p>
+  <p class="lead reveal">Ou contactez-nous au  
+    <a href="tel:+33645227470" aria-label="Appeler le 06 45 22 74 70">06 45 22 74 70</a>.
+  </p>
 
-  <label class="label" for="email">Email</label>
-  <input class="input" id="email" name="email" type="email" placeholder="vous@exemple.com" autocomplete="email" required />
+  <form class="form reveal" 
+        id="contactForm" 
+        method="POST" 
+        action="https://formspree.io/f/xrbwzkre">
 
-  <label class="label" for="message">Message</label>
-  <textarea class="textarea" id="message" name="message" placeholder="Décrivez brièvement votre besoin" required></textarea>
+    <label class="label" for="name">Nom</label>
+    <input class="input" id="name" name="name" type="text" placeholder="Votre nom" required>
 
-  <label class="label" style="display:flex;gap:8px;align-items:center">
-    <input type="checkbox" id="consent" required />
-    <span>J’accepte la <a href="./pages/confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</span>
-  </label>
+    <label class="label" for="email">Email</label>
+    <input class="input" id="email" name="email" type="email" placeholder="vous@exemple.com" required>
 
-  <button class="btn" type="submit">Envoyer</button>
-  <small class="label" id="formMsg" aria-live="polite"></small>
-</form>
+    <label class="label" for="message">Message</label>
+    <textarea class="textarea" id="message" name="message" placeholder="Décrivez brièvement votre besoin" required></textarea>
 
-    </section>
+    <label class="label" style="display:flex;gap:8px;align-items:center">
+      <input type="checkbox" id="consent" required>
+      <span>J’accepte la 
+        <a href="./pages/confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.
+      </span>
+    </label>
+
+    <button class="btn" type="submit">Envoyer</button>
+    <small class="label" id="formMsg" aria-live="polite"></small>
+  </form>
+</section>
+
   </main>
 <div class="spacer"></div>
   <footer>
