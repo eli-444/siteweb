@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr" prefix="og: http://ogp.me/ns#">
+<html lang="fr" prefix="og: http://ogp.me/ns#" data-booking-url="https://calendar.app.google/PZN4dqf7ezPFgiQ48">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Aurora Web &amp; Sec | Agence web & sécurité — création de sites & apps</title>
-  <meta name="description" content="Aurora Web & Sec : conception de sites vitrines performants, développement d’applications web, SEO technique & sécurité applicative. Devis rapide." />
+  <title data-i18n="home.meta.title">Aurora Web &amp; Sec | Agence web & sécurité — création de sites & apps</title>
+  <meta name="description" data-i18n-content="home.meta.description" content="Aurora Web & Sec : conception de sites vitrines performants, développement d’applications web, SEO technique & sécurité applicative. Devis rapide." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
   <link rel="canonical" href="https://www.aurorawebandsecurity.fr/">
@@ -58,7 +58,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-i18n="common.skipLink">Aller au contenu</a>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
   <!-- Fond animé global -->
@@ -79,13 +79,18 @@
         fetchpriority="high"
       /></span>
 <span>Aurora Web &amp; Sec</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="common.nav.openMenu">
       <span></span><span></span><span></span>
     </button>
-    <nav class="menu" id="site-menu" aria-label="Navigation principale">
-      <a href="pages/services.html">Services</a>
-      <a href="pages/a-propos.html">À propos</a>
-      <a href="./#contact">Contact</a>
+    <nav class="menu" id="site-menu" aria-label="Navigation principale" data-i18n-aria-label="common.nav.primary">
+      <a href="pages/services.html" data-i18n="common.nav.services">Services</a>
+      <a href="pages/a-propos.html" data-i18n="common.nav.about">À propos</a>
+      <a href="./#contact" data-i18n="common.nav.contact">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-aria-label="common.nav.languageSwitcher">
+        <button class="lang-btn" type="button" data-lang-switch="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">|</span>
+        <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
 
       <!-- Garder ce bloc identique sur TOUTES les pages -->
       
@@ -96,20 +101,20 @@
 
   <main id="main">
     <section class="hero container">
-      <h1 class="reveal"><span class="hero-underline">Aurora</span> <br>Web &amp; Sec  <span class="gradient gradient-split"><span class="gradient-copy">Agence de création de site</span><span class="gradient-tail">web</span></span></h1>
-      <p class="lead reveal" style="margin-top:6px">
+      <h1 class="reveal"><span class="hero-underline">Aurora</span> <br>Web &amp; Sec <span class="gradient gradient-split" data-i18n-html="home.hero.titleSuffix"><span class="gradient-copy">Agence de création de site</span><span class="gradient-tail">web</span></span></h1>
+      <p class="lead reveal" style="margin-top:6px" data-i18n-html="home.hero.lead">
         Conception de <strong>sites vitrines</strong> rapides (SEO-friendly), développement d’<strong>applications web</strong> sur-mesure,
         <strong>SEO technique</strong> & <strong>sécurité applicative</strong>. Nous alignons design, performance et croissance.
       </p>
       <div class="cta reveal">
-        <a class="btn" href="#contact">Un projet à nous faire part ?</a>
-        <a class="btn alt" href="./pages/services.html">Découvrir nos services</a>
+        <a class="btn" href="#contact" data-i18n="home.hero.primaryCta">Un projet à nous faire part ?</a>
+        <a class="btn alt" href="./pages/services.html" data-i18n="home.hero.secondaryCta">Découvrir nos services</a>
       </div>
     </section>
 <div class="spacer"></div>
     <section id="services" class="container">
-      <h2 class="reveal">Création&nbsp;de&nbsp;sites<br>&amp; applications web</h2>
-      <p class="lead reveal">Du <em>site vitrine</em> optimisé aux <em>web apps</em> scalables, nos livrables respectent les bonnes pratiques SEO & Core Web Vitals.</p>
+      <h2 class="reveal" data-i18n-html="home.services.heading">Création&nbsp;de&nbsp;sites<br>&amp; applications web</h2>
+      <p class="lead reveal" data-i18n-html="home.services.lead">Du <em>site vitrine</em> optimisé aux <em>web apps</em> scalables, nos livrables respectent les bonnes pratiques SEO & Core Web Vitals.</p>
       <div class="grid" style="margin-top:22px">
   <!-- 1) Avec qui nous travaillons -->
   <article class="card reveal feature">
@@ -119,12 +124,12 @@
         <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" fill="currentColor"/>
       </svg>
     </div>
-    <h3>Avec qui travaillons-nous ?</h3>
-    <p class="muted">Nous aimons accompagner&nbsp;:</p>
+    <h3 data-i18n="home.services.card1.title">Avec qui travaillons-nous ?</h3>
+    <p class="muted" data-i18n-html="home.services.card1.lead">Nous aimons accompagner&nbsp;:</p>
     <ul class="bullets">
-      <li>Entreprises de services locales</li>
-      <li>Startups SaaS</li>
-      <li>Startups IA</li>
+      <li data-i18n="home.services.card1.item1">Entreprises de services locales</li>
+      <li data-i18n="home.services.card1.item2">Startups SaaS</li>
+      <li data-i18n="home.services.card1.item3">Startups IA</li>
     </ul>
   </article>
 
@@ -136,12 +141,12 @@
         <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 4h11M8 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </div>
-    <h3>Ce que nous faisons ?</h3>
+    <h3 data-i18n="home.services.card2.title">Ce que nous faisons ?</h3>
     <ul class="bullets">
-      <li>Web design</li>
-      <li>Développement web</li>
-      <li>Référencement (SEO)</li>
-      <li>GEO (SEO IA)</li>
+      <li data-i18n="home.services.card2.item1">Web design</li>
+      <li data-i18n="home.services.card2.item2">Développement web</li>
+      <li data-i18n="home.services.card2.item3">Référencement (SEO)</li>
+      <li data-i18n="home.services.card2.item4">GEO (SEO IA)</li>
     </ul>
   </article>
 
@@ -154,18 +159,18 @@
       <path d="m12 2 2.9 6.2 6.8.6-5.1 4.5 1.6 6.7L12 16.9 5.8 20l1.6-6.7L2.3 8.8l6.8-.6L12 2Z" fill="currentColor"/>
     </svg>
   </div>
-  <h3>Pourquoi nous ?</h3>
+  <h3 data-i18n="home.services.card3.title">Pourquoi nous ?</h3>
   <ul class="bullets">
-    <li>Clairs & transparents</li>
-    <li>Rapides & réactifs</li>
-    <li>Focus résultats</li>
+    <li data-i18n="home.services.card3.item1">Clairs & transparents</li>
+    <li data-i18n="home.services.card3.item2">Rapides & réactifs</li>
+    <li data-i18n="home.services.card3.item3">Focus résultats</li>
   </ul>
 </article>
 
     </section>
 <div class="spacer"></div>
 <section id="trust" class="container">
-  <h2 class="reveal center">Ils nous ont fait confiance</h2>
+  <h2 class="reveal center" data-i18n="home.trust.heading">Ils nous ont fait confiance</h2>
 
   <!-- Marquee accessible -->
   <div class="marquee reveal" aria-label="Partenaires et clients">
@@ -206,59 +211,88 @@
 
 <div class="spacer"></div>
    <section id="contact" class="container">
-  <h2 class="reveal">Vous avez un projet&nbsp;? Contactez-nous&nbsp;!</h2>
-  <p class="lead reveal">Expliquez-nous votre besoin et nous tacherons de vous répondre dans les prochaines 24h</p>
-  <p class="lead reveal">Ou contactez-nous au  
+  <h2 class="reveal" data-i18n-html="home.contact.heading">Vous avez un projet&nbsp;? Contactez-nous&nbsp;!</h2>
+  <p class="lead reveal" data-i18n="home.contact.lead">Expliquez-nous votre besoin et nous tacherons de vous répondre dans les prochaines 24h</p>
+  <p class="lead reveal" data-i18n-html="home.contact.phone">Ou contactez-nous au  
     <a href="tel:+33645227470" aria-label="Appeler le 06 45 22 74 70">06 45 22 74 70</a>.
   </p>
-
   <form class="form reveal" 
         id="contactForm" 
         method="POST" 
         action="https://formspree.io/f/xrbwzkre">
 
-    <label class="label" for="name">Nom</label>
-    <input class="input" id="name" name="name" type="text" placeholder="Votre nom" required>
+    <label class="label" for="name" data-i18n="home.contact.form.nameLabel">Nom</label>
+    <input class="input" id="name" name="name" type="text" placeholder="Votre nom" data-i18n-placeholder="home.contact.form.namePlaceholder" required>
 
-    <label class="label" for="email">Email</label>
-    <input class="input" id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+    <label class="label" for="email" data-i18n="home.contact.form.emailLabel">Email</label>
+    <input class="input" id="email" name="email" type="email" placeholder="vous@exemple.com" data-i18n-placeholder="home.contact.form.emailPlaceholder" required>
 
-    <label class="label" for="message">Message</label>
-    <textarea class="textarea" id="message" name="message" placeholder="Décrivez brièvement votre besoin" required></textarea>
+    <label class="label" for="message" data-i18n="home.contact.form.messageLabel">Message</label>
+    <textarea class="textarea" id="message" name="message" placeholder="Décrivez brièvement votre besoin" data-i18n-placeholder="home.contact.form.messagePlaceholder" required></textarea>
 
     <label class="label" style="display:flex;gap:8px;align-items:center">
       <input type="checkbox" id="consent" required>
-      <span>J’accepte la 
+      <span data-i18n-html="home.contact.form.consent">J’accepte la 
         <a href="./pages/confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.
       </span>
     </label>
 
-    <button class="btn" type="submit">Envoyer</button>
+    <button class="btn" type="submit" data-i18n="home.contact.form.submit">Envoyer</button>
     <small class="label" id="formMsg" aria-live="polite"></small>
   </form>
+
+  <div class="contact-booking reveal">
+    <div class="booking-shell">
+      <div class="booking-copy">
+        <h3 class="booking-heading" data-i18n="home.contact.bookingHeading">Calendrier de réservation</h3>
+        <p class="label contact-booking-note" data-i18n="home.contact.bookingNote">Choisissez directement un créneau disponible pour un échange sur Google Meet.</p>
+      </div>
+      <button
+        class="btn booking-toggle"
+        type="button"
+        data-booking-toggle
+        aria-expanded="false"
+        aria-controls="booking-stage-panel"
+        data-i18n="home.contact.bookingCta"
+      >Prendre rendez-vous directement</button>
+      <div class="booking-stage" id="booking-stage-panel" hidden>
+        <div class="booking-stage-bar">
+  
+        </div>
+        <iframe
+          class="booking-frame"
+          data-booking-embed
+          title="Calendrier de réservation Aurora Web & Sec"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          hidden
+        ></iframe>
+      </div>
+    </div>
+  </div>
 </section>
 
   </main>
 <div class="spacer"></div>
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <span>© <span id="year"></span> Aurora Web &amp; Sec — Tous droits réservés</span>
-      <nav aria-label="Liens de bas de page">
-        <a href="./pages/mentions-legales.html">Mentions légales</a> •
-        <a href="./pages/confidentialite.html">Confidentialité</a> •
-        <a href="./pages/cgv.html">CGV</a>
+      <span>© <span id="year"></span> <span data-i18n="common.footer.rights">Aurora Web &amp; Sec — Tous droits réservés</span></span>
+      <nav aria-label="Liens de bas de page" data-i18n-aria-label="common.footer.nav">
+        <a href="./pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a> •
+        <a href="./pages/confidentialite.html" data-i18n="common.footer.privacy">Confidentialité</a> •
+        <a href="./pages/cgv.html" data-i18n="common.footer.cgv">CGV</a>
       </nav>
     </div>
   </footer>
 
   <!-- Bandeau cookies -->
   <div id="cookie-banner" role="dialog" aria-label="Gestion des cookies">
-    <p>Nous utilisons des cookies pour mesurer l’audience et améliorer votre expérience. Vous pouvez accepter ou refuser.</p>
+    <p data-i18n="common.cookies.message">Nous utilisons des cookies pour mesurer l’audience et améliorer votre expérience. Vous pouvez accepter ou refuser.</p>
     <div class="actions">
-      <button id="btn-decline">Refuser</button>
-      <button id="btn-accept">Accepter</button>
+      <button id="btn-decline" data-i18n="common.cookies.decline">Refuser</button>
+      <button id="btn-accept" data-i18n="common.cookies.accept">Accepter</button>
     </div>
-    <small class="label">Vous pourrez modifier votre choix dans la <a href="../pages/confidentialite.html">politique de confidentialité</a>.</small>
+    <small class="label" data-i18n-html="common.cookies.notice">Vous pourrez modifier votre choix dans la <a href="./pages/confidentialite.html">politique de confidentialité</a>.</small>
   </div>
 
   <!-- JS global -->

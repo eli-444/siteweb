@@ -26,7 +26,7 @@
 
 </head>
 <body>
-<a class="skip-link" href="#main">Aller au contenu</a>
+<a class="skip-link" href="#main" data-i18n="common.skipLink">Aller au contenu</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="shapes" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <header class="nav">
@@ -42,14 +42,19 @@
         fetchpriority="high"
       /></span>
 <span>Aurora Web &amp; Sec</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="common.nav.openMenu">
       <span></span><span></span><span></span>
     </button>
 
-    <nav class="menu" id="site-menu" aria-label="Navigation principale">
-      <a href="../pages/services.html">Services</a>
-      <a href="../pages/a-propos.html">À propos</a>
-      <a href="../#contact">Contact</a>
+    <nav class="menu" id="site-menu" aria-label="Navigation principale" data-i18n-aria-label="common.nav.primary">
+      <a href="../pages/services.html" data-i18n="common.nav.services">Services</a>
+      <a href="../pages/a-propos.html" data-i18n="common.nav.about">À propos</a>
+      <a href="../#contact" data-i18n="common.nav.contact">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-aria-label="common.nav.languageSwitcher">
+        <button class="lang-btn" type="button" data-lang-switch="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">|</span>
+        <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
 
      
     </nav>
@@ -104,7 +109,7 @@
 <footer>
   <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
     <span>© <span id="year"></span> Aurora Web &amp; Sec</span>
-    <nav><a href="../pages/mentions-legales.html">Mentions légales</a> • <a href="../pages/confidentialite.html">Confidentialité</a> • <a href="../pages/cgv.html">CGV</a></nav>
+    <nav aria-label="Liens de bas de page" data-i18n-aria-label="common.footer.nav"><a href="../pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a> • <a href="../pages/confidentialite.html" data-i18n="common.footer.privacy">Confidentialité</a> • <a href="../pages/cgv.html" data-i18n="common.footer.cgv">CGV</a></nav>
   </div>
 </footer>
 
