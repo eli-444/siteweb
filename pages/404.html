@@ -1,11 +1,66 @@
-<!DOCTYPE html><html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page introuvable — 404</title>
-<meta name="robots" content="noindex">
-</head><body>
-<main class="container">
-<h1>404</h1>
-<p>Oups, cette page n’existe pas (ou plus).</p>
-<p><a href="/">Revenir à l’accueil</a></p>
-</main>
-</body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="notFound.meta.title">Page introuvable — 404 | Aurora Web & Sec</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/css/aurora-neo.css">
+  <link rel="manifest" href="/manifest/manifest.webmanifest">
+  <meta name="theme-color" content="#202124">
+  <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="32x32">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="common.skipLink">Aller au contenu</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="https://aurorawebandsecurity.fr" class="brand" aria-label="Aurora Web & Sec – Accueil">
+        <span class="brand-logo-circle">
+          <img class="brand-logo" src="/assets/favicon/awsiconblue.png" alt="" width="26" height="26" decoding="async">
+        </span>
+        <span>Aurora Web &amp; Sec</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="common.nav.openMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu" id="site-menu" aria-label="Navigation principale" data-i18n-aria-label="common.nav.primary">
+        <a href="../pages/services.html" data-i18n="common.nav.services">Services</a>
+        <a href="../pages/a-propos.html" data-i18n="common.nav.about">À propos</a>
+        <a href="../#contact" data-i18n="common.nav.contact">Contact</a>
+        <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-aria-label="common.nav.languageSwitcher">
+          <button class="lang-btn" type="button" data-lang-switch="fr" aria-pressed="true">FR</button>
+          <span aria-hidden="true">|</span>
+          <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="container hero">
+      <h1>404</h1>
+      <p class="lead" data-i18n="notFound.hero.lead">Oups, cette page n’existe pas (ou plus).</p>
+      <div class="cta">
+        <a class="btn" href="/" data-i18n="notFound.hero.primaryCta">Revenir à l’accueil</a>
+        <a class="btn alt" href="/pages/services.html" data-i18n="notFound.hero.secondaryCta">Voir les services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="year"></span> <span data-i18n="common.footer.brandOnly">Aurora Web &amp; Sec</span></span>
+      <nav aria-label="Liens de bas de page" data-i18n-aria-label="common.footer.nav">
+        <a href="../pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a> •
+        <a href="../pages/confidentialite.html" data-i18n="common.footer.privacy">Confidentialité</a> •
+        <a href="../pages/cgv.html" data-i18n="common.footer.cgv">CGV</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../assets/js/awes.js" defer></script>
+</body>
+</html>

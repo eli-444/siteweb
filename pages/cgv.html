@@ -6,7 +6,7 @@
 <title>Conditions Générales de Vente (CGV) | Aurora Web & Sec</title>
 <meta name="description" content="CGV d’Aurora Web & Sec : provisions contractuelles applicables aux prestations web et sécurité – devis, commande, prix, droit de rétractation, propriété intellectuelle, maintenance, sécurité, responsabilité, données personnelles, médiation et litiges.">
 <link rel="canonical" href="https://www.aurorawebandsecurity.fr/pages/cgv.html">
-<link rel="stylesheet" href="../assets/css/awes.css">
+<link rel="stylesheet" href="../assets/css/aurora-neo.css">
   <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="website">
@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="Mockup d’un site créé par Aurora Web & Sec">
   
   <!-- PWA / Favicon -->
-  <link rel="manifest" href="manifest/manifest.webmanifest">
+  <link rel="manifest" href="/manifest/manifest.webmanifest">
   <meta name="theme-color" content="#0a0b10">
   <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="32x32">
   <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="192x192">
@@ -26,7 +26,7 @@
 
 </head>
 <body>
-<a class="skip-link" href="#main">Aller au contenu</a>
+<a class="skip-link" href="#main" data-i18n="common.skipLink">Aller au contenu</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <div class="shapes" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
@@ -43,11 +43,19 @@
         fetchpriority="high"
       /></span>
 <span>Aurora Web &amp; Sec</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="common.nav.openMenu">
+      <span></span><span></span><span></span>
+    </button>
 
-    <nav class="menu" aria-label="Navigation principale">
-      <a href="../pages/services.html" title="Voir nos services">Services</a>
-      <a href="../pages/a-propos.html" title="À propos">À propos</a>
-      <a href="../#contact" title="Nous contacter">Contact</a>
+    <nav class="menu" id="site-menu" aria-label="Navigation principale" data-i18n-aria-label="common.nav.primary">
+      <a href="../pages/services.html" data-i18n="common.nav.services">Services</a>
+      <a href="../pages/a-propos.html" data-i18n="common.nav.about">À propos</a>
+      <a href="../#contact" data-i18n="common.nav.contact">Contact</a>
+      <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-aria-label="common.nav.languageSwitcher">
+        <button class="lang-btn" type="button" data-lang-switch="fr" aria-pressed="true">FR</button>
+        <span aria-hidden="true">|</span>
+        <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -231,11 +239,11 @@ Je vous notifie par la présente ma rétractation du contrat portant sur la pres
 
 <footer role="contentinfo">
   <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <span>© <span id="year"></span> Aurora Web &amp; Sec — Tous droits réservés</span>
-    <nav aria-label="Liens de bas de page">
-      <a href="../pages/mentions-legales.html">Mentions légales</a> •
-      <a href="../pages/confidentialite.html">Confidentialité</a> •
-      <a href="../pages/cgv.html" aria-current="page">CGV</a>
+    <span>© <span id="year"></span> <span data-i18n="common.footer.rights">Aurora Web &amp; Sec — Tous droits réservés</span></span>
+    <nav aria-label="Liens de bas de page" data-i18n-aria-label="common.footer.nav">
+      <a href="../pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a> •
+      <a href="../pages/confidentialite.html" data-i18n="common.footer.privacy">Confidentialité</a> •
+      <a href="../pages/cgv.html" aria-current="page" data-i18n="common.footer.cgv">CGV</a>
     </nav>
   </div>
 </footer>

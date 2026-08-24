@@ -1,3 +1,3 @@
-Contact: mailto:security@aurorawebandsecurity.com
-Policy: https://www.aurorawebandsecurity.com/confidentialite.html
+Contact: mailto:security@aurorawebandsecurity.fr
+Policy: https://www.aurorawebandsecurity.fr/confidentialite.html
 Preferred-Languages: fr, en
