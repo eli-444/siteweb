@@ -1,101 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title data-i18n="services.meta.title">Services | Aurora Web & Sec</title>
-<meta name="description" data-i18n-content="services.meta.description" content="Nos services : sites vitrines SEO, applications web sur-mesure, audits SEO & sécurité, maintenance et hébergement.">
-<link rel="canonical" href="https://www.aurorawebandsecurity.fr/pages/services.html">
-<link rel="stylesheet" href="../assets/css/aurora-neo.css">
-  <!-- Open Graph -->
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Aurora Web & Sec">
-  <meta property="og:title" content="Aurora Web & Sec | Agence web & sécurité — création de sites & apps">
-  <meta property="og:description" content="Sites vitrines rapides, applications web sur-mesure, SEO & sécurité.">
-  <meta property="og:url" content="https://www.aurorawebandsecurity.fr/">
-  <meta property="og:image" content="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png">
-  <meta property="og:image:alt" content="Mockup d’un site créé par Aurora Web & Sec">
-  
-  <!-- PWA / Favicon -->
-  <link rel="manifest" href="/manifest/manifest.webmanifest">
-  <meta name="theme-color" content="#0a0b10">
-  <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="32x32">
-  <link rel="icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="https://www.aurorawebandsecurity.fr/assets/favicon/awsiconblue.png">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Services | Aurora Web &amp; Sec</title>
+  <meta name="description" content="Design, développement web, SEO, sécurité et accompagnement digital sur mesure.">
+  <link rel="canonical" href="https://www.aurorawebandsecurity.fr/pages/services.html">
+  <link rel="icon" href="../assets/favicon/awsiconblue.png">
+  <meta name="theme-color" content="#080808">
+  <link rel="stylesheet" href="../assets/css/awes.css">
 </head>
-<body>
-<a class="skip-link" href="#main" data-i18n="common.skipLink">Aller au contenu</a>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<div class="shapes" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<body class="services-page">
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a href="https://aurorawebandsecurity.fr" class="brand" aria-label="Aurora Web & Sec – Accueil">
-        <span class="brand-logo-circle">
-      <img
-        class="brand-logo"
-        src="/assets/favicon/awsiconblue.png"   
-        alt=""                            
-        width="54" height="54"
-        decoding="async"
-        fetchpriority="high"
-      /></span>
-<span>Aurora Web &amp; Sec</span> </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Ouvrir le menu" data-i18n-aria-label="common.nav.openMenu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="menu" id="site-menu" aria-label="Navigation principale" data-i18n-aria-label="common.nav.primary">
-      <a href="../pages/services.html" aria-current="page" data-i18n="common.nav.services">Services</a>
-      <a href="../pages/a-propos.html" data-i18n="common.nav.about">À propos</a>
-      <a href="../#contact" data-i18n="common.nav.contact">Contact</a>
-      <div class="lang-switch" role="group" aria-label="Changer la langue" data-i18n-aria-label="common.nav.languageSwitcher">
-        <button class="lang-btn" type="button" data-lang-switch="fr" aria-pressed="true">FR</button>
-        <span aria-hidden="true">|</span>
-        <button class="lang-btn" type="button" data-lang-switch="en" aria-pressed="false">EN</button>
-      </div>
-
-      <!-- Garder ce bloc identique sur TOUTES les pages -->
-     
-    </nav>
-  </div>
-</header>
-
-
-<main id="main">
-  <section class="container hero">
-    <h1><span class="gradient" data-i18n="services.hero.heading">Nos services</span></h1>
-    <p class="lead" data-i18n="services.hero.lead">Des fondations solides (SEO, accessibilité, sécurité) jusqu’au déploiement en production.</p>
-  </section>
-
-  <section class="container">
-    <div class="grid">
-      <article class="card">
-        <h2 data-i18n="services.card1.title">Sites vitrines SEO</h2>
-        <p data-i18n="services.card1.body">Architecture sémantique, balisage, performances (CWV), responsive, suivi Search Console.</p>
-      </article>
-      <article class="card">
-        <h2 data-i18n="services.card2.title">Applications web</h2>
-        <p data-i18n="services.card2.body">Dashboards, outils métiers, APIs, CI/CD, monitoring et logs.</p>
-      </article>
-      <article class="card">
-        <h2 data-i18n="services.card3.title">Audits & sécurité</h2>
-        <p data-i18n="services.card3.body">Audit technique SEO, headers de sécurité, CSP et sauvegardes.</p>
-      </article>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../" aria-label="Aurora Web & Sec — Accueil"><span class="brand-mark">AWS</span><span class="brand-name">Aurora Web &amp; Sec</span></a>
+      <nav class="menu" aria-label="Navigation principale"><a href="services.html" aria-current="page">Expertise</a><a href="../#projets">Projets</a><a href="a-propos.html">Studio</a></nav>
+      <a class="nav-cta" href="../#contact">Parlons de votre projet <span>↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
     </div>
-  </section>
-</main>
-<div class="spacer"></div>
+  </header>
 
-<footer>
-  <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-    <span>© <span id="year"></span> <span data-i18n="common.footer.brandOnly">Aurora Web &amp; Sec</span></span>
-    <nav aria-label="Liens de bas de page" data-i18n-aria-label="common.footer.nav"><a href="../pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a> • <a href="../pages/confidentialite.html" data-i18n="common.footer.privacy">Confidentialité</a> • <a href="../pages/cgv.html" data-i18n="common.footer.cgv">CGV</a></nav>
-  </div>
-</footer>
+  <main id="main">
+    <section class="container hero inner-hero">
+      <p class="eyebrow reveal"><span></span> Notre expertise</p>
+      <h1 class="reveal">Du concept à<br><em>la mise en ligne.</em></h1>
+      <p class="lead reveal">Nous réunissons les compétences essentielles pour créer des expériences digitales cohérentes, performantes et capables d’évoluer avec votre activité.</p>
+    </section>
 
-<script src="../assets/js/awes.js" defer></script>
+    <section class="container service-detail-list">
+      <article class="service-detail reveal"><span class="service-no">01</span><div><h2>Stratégie &amp; Design</h2><p>Nous transformons vos objectifs en une direction claire et une interface qui vous ressemble. Chaque parcours est pensé pour faciliter la compréhension, inspirer confiance et guider l’utilisateur vers l’action.</p><ul><li>Positionnement et architecture</li><li>Direction artistique</li><li>UX/UI design et prototypage</li><li>Design responsive et accessible</li></ul></div></article>
+      <article class="service-detail reveal"><span class="service-no">02</span><div><h2>Développement web</h2><p>Nous construisons des sites vitrines et des applications rapides, solides et simples à maintenir. Le code reste au service de l’expérience, de la performance et de vos besoins réels.</p><ul><li>Sites vitrines sur mesure</li><li>Applications et outils métiers</li><li>Intégrations et automatisations</li><li>Performance et Core Web Vitals</li></ul></div></article>
+      <article class="service-detail reveal"><span class="service-no">03</span><div><h2>SEO &amp; Visibilité</h2><p>Nous posons les fondations techniques et éditoriales nécessaires pour rendre votre activité visible sur les moteurs de recherche et dans les nouvelles expériences de recherche assistées par l’IA.</p><ul><li>Audit SEO technique</li><li>Structure sémantique et contenus</li><li>SEO local</li><li>GEO et données structurées</li></ul></div></article>
+      <article class="service-detail reveal"><span class="service-no">04</span><div><h2>Sécurité &amp; Suivi</h2><p>La sécurité et le suivi font partie du projet dès le départ. Après le lancement, nous restons disponibles pour surveiller, maintenir, conseiller et faire évoluer votre présence digitale.</p><ul><li>Audit et durcissement</li><li>Sauvegardes et maintenance</li><li>Suivi des performances</li><li>Accompagnement après lancement</li></ul></div></article>
+    </section>
+
+    <section class="service-callout"><div class="container reveal"><p class="section-index">UN BESOIN PARTICULIER ?</p><h2>Construisons la bonne<br><span>solution ensemble.</span></h2><a class="submit" href="../#contact">Nous parler du projet <span>↗</span></a></div></section>
+  </main>
+
+  <footer><div class="container footer-bottom"><span>© <span id="year"></span> Aurora Web &amp; Sec</span><nav><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgv.html">CGV</a></nav><a href="#main">Retour en haut ↑</a></div></footer>
+  <script src="../assets/js/awes.js" defer></script>
 </body>
 </html>

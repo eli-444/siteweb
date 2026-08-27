@@ -36,7 +36,7 @@
   }
 
   function initMenu() {
-    const button = $('.menu-toggle'), menu = $('.menu');
+    const button = $('.menu-toggle, .nav-toggle'), menu = $('.menu');
     if (!button || !menu) return;
     button.addEventListener('click', () => {
       const open = menu.classList.toggle('open');
